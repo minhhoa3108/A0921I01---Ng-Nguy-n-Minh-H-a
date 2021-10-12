@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey khách hàng</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+      .box{
+        background-color: white;
+        padding: 10px;
+      }
+      .box:hover{
+        background-color: rgb(248, 211, 174);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 20px">
+      <h3>Market Research Survey</h3>
+      <br>
+      <p>Please take a few moments to complete this satisfaction survey</p>
+      <hr>
+      <form action="" method="post">
+        <div class="box">
+          <label for="">What is your age ranger?</label><br><br>
+          <select name="age" id="" style="width: 300px">
+            <option value="" active>18-24</option>
+            <option value="">25-34</option>
+            <option value="">35-50</option>
+            <option value="">50+</option>
+          </select>
+        </div>
+        <div class="box">
+          <label for="">What is your yearly income ranger?</label><br><br>
+          <select name="age" id="" style="width: 300px">
+            <option value="" active>$0 - $25,000</option>
+            <option value="">$25,001 - $50,000</option>
+            <option value="">$50,001 - $100,000</option>
+            <option value="">$100,000+</option>
+          </select>
+        </div>
+        <div class="box">
+          <label for="">Gender Identity:</label><br><br>
+          <input type="radio" name="Gender" style="margin-right: 10px;"  value="Male"><label for="">Male</label><br>
+          <input type="radio" name="Gender" style="margin-right: 10px;" value="Female"><label for="">Female</label><br>
+          <input type="radio" name="Gender" style="margin-right: 10px;" value="Nonbinary"><label for="">Nonbinary</label><br>
+          <input type="radio" name="Gender" style="margin-right: 10px;" value="Other"><label for="">Other</label><br>
+          <input type="text" name="" id="" style="width: 150px">
+        </div>
+        <div class="box">
+          <label for="">Which of the following products have your purchased in the last 2 months. Please check all that apply:</label><br><br>
+          <input type="checkbox" name="Product" style="margin-right: 10px;"  value=""><label for="">Product 1</label><br>
+          <input type="checkbox" name="Product" style="margin-right: 10px;" value=""><label for="">Product 2</label><br>
+          <input type="checkbox" name="Product" style="margin-right: 10px;" value=""><label for="">Product 3</label><br>
+        </div>
+        <div class="box">
+          <label for="">How often would you use our new product?</label><br><br>
+          <input type="radio" name="often" style="margin-right: 10px;" value=""><label for="">Daily</label><br>
+          <input type="radio" name="often" style="margin-right: 10px;" value=""><label for="">Weekly</label><br>
+          <input type="radio" name="often" style="margin-right: 10px;" value=""><label for="">Monthly</label><br>
+        </div>
+        <div class="box">
+          <label for="">What would you pay for the new product?</label><br><br>
+          $ <input type="text" style="width: 70px; height: 25px;"> . <input type="text" style="width: 30px; height: 25px">
+          <p style="margin-left: 20px;">Dollas&emsp;&emsp;Cents</p>
+        </div>
+        <div class="box">
+          <label for="">What features would you like to see in the new product.</label><br><br>
+          <textarea name="" id="" cols="100" rows="10"></textarea>
+        </div>
+      </form>
+      
+    </div>
+  </body>
+</html>
