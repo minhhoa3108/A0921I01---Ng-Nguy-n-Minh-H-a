@@ -16,26 +16,33 @@
           </td>
           <td>
             <label for="">From Currency</label><br>
-            <select name="" id="">
+            <select name="" id="form">
               <option value="" active>VietNam</option>
               <option value="">USD</option>
             </select>
           </td>
           <td>
             <label for="">To Currency</label><br>
-            <select name="" id="">
+            <select name="" id="to">
               <option value="" active>USD</option>
               <option value="">VietNam</option>
             </select>
           </td>
           <td>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Convert" onclick="getValue()">
           </td>
         </tr>
       </table>
+
+      <p>The result:</p>
+      <span id="result"></span>
     </form>
   </body>
   <script>
-    
+    function getValue(){
+      let amout = document.getElementById('amout').value;
+      let result = amout/23000;
+      document.getElementById('result').innerHTML = result;
+    }
   </script>
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bài Tập: Cấu Trúc điều kiện 01</title>
+</head>
+
+<body>
+  <form action="" method="post" enctype="multipart/form-">
+    <p>Bài 1</p>
+    <input type="text" id="a">
+    <input type="text" id="b">
+    <input type="button" value="Cal" onclick="bai1()">
+    <p id="bai1"></p>
+
+    <p>Bài 2</p>
+    <input type="text" id="hocsinh">
+    <input type="button" value="Result" onclick="bai2()">
+    <p id="bai2"></p>
+
+    <p>Bài 3</p>
+    <input type="text" id="songuyen">
+    <input type="button" value="Result" onclick="bai3()">
+    <p id="bai3"></p>
+
+    <p>Bài 4</p>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="text" id="num3">
+    <input type="button" value="Result" onclick="bai4()">
+    <p id="bai4"></p>
+
+    <p>Bài 5</p>
+    <input type="text" id="kiemtra">
+    <input type="text" id="giuaky">
+    <input type="text" id="cuoiky">
+    <input type="button" value="Result" onclick="bai5()">
+    <p id="bai5"></p>
+
+    <p>Bài 6</p>
+    <input type="text" id="doanhso">
+    <input type="button" value="Result" onclick="bai6()">
+    <p id="bai6"></p>
+  </form>
+  <script>
+    //-------------------------- bai 1 -----------------------------
+
+    function bai1() {
+      let a = parseInt(document.getElementById('a').value);
+      let b = parseInt(document.getElementById('b').value);
+      
+      if(a % b == 0) {
+        document.getElementById("bai1").innerHTML = "a chia hết cho b";
+      }else{
+        document.getElementById("bai1").innerHTML = "a không chia hết cho b";
+      }
+    }
+
+    //-----------------=------ bai 2 -----------------------------
+    function bai2(){
+      let hocsinh = parseInt(document.getElementById('hocsinh').value);
+      if(hocsinh == 15){
+        document.getElementById("bai2").innerHTML = "Đủ điều kiện học lớp 10";
+      }else{
+        document.getElementById("bai2").innerHTML = "không đủ điều kiện học lớp 10";
+      }
+    }
+
+    function bai3(){
+      let songuyen = parseInt(document.getElementById('songuyen').value);
+      if(songuyen == 0){
+        document.getElementById("bai3").innerHTML = "Số này là số 0";
+      }else if(songuyen > 0){
+        document.getElementById("bai3").innerHTML = "Số này lớn hơn 0";
+      }else{
+        document.getElementById("bai3").innerHTML = "Số này nhỏ hơn 0";
+      }
+    }
+
+    function bai4(){
+      let num1 = parseInt(document.getElementById('num1').value);
+      let num2 = parseInt(document.getElementById('num2').value);
+      let num3 = parseInt(document.getElementById('num3').value);
+      if(num1 < num2){
+        if(num2 > num3){
+          document.getElementById("bai4").innerHTML = num2;
+        }else{
+          document.getElementById("bai4").innerHTML = num3;
+        }
+      }else{
+        if(num1 > num3){
+          document.getElementById("bai4").innerHTML = num1;
+        }else{
+          document.getElementById("bai4").innerHTML = num3;
+        }
+      }
+    }
+
+    function bai5(){
+      let kiemtra = parseInt(document.getElementById('kiemtra').value);
+      let giuaky = parseInt(document.getElementById('giuaky').value);
+      let cuoiky = parseInt(document.getElementById('cuoiky').value);
+      let result = (kiemtra + giuaky + cuoiky)/3;
+      if( result >=0 && result <= 3){
+        document.getElementById("bai5").innerHTML = "Yếu";
+      }else if(result > 3 && result <=5){
+        document.getElementById("bai5").innerHTML = "Trung Bình";
+      }else if(result > 5 && result < 8){
+        document.getElementById("bai5").innerHTML = "Khá";
+      }else if(result >= 8 && result <= 10){
+        document.getElementById("bai5").innerHTML = "Giỏi";
+      }else{
+        document.getElementById("bai5").innerHTML = "Not Valid";
+      }
+    }
+
+    function bai6(){
+      let tongtien = parseInt(document.getElementById('tongtien').value);
+      let phantram;
+      let hoahong;
+      if(doanhso == 1000){
+        phantram = 0.05;
+        hoahong = doanhso * phantram;
+        document.getElementById('bai6').innerHTML = hoahong;
+      }else if(doanhso > 100 && doanhso < 1000){
+        phantram = 0.03;
+        hoahong = doanhso * phantram;
+        document.getElementById('bai6').innerHTML = hoahong;
+      }else{
+        phantram = 0.08;
+        hoahong = doanhso * phantram;
+        document.getElementById('bai6').innerHTML = hoahong;
+      }
+    }
+  </script>
+</body>
+
+</html>
