@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bài Tập: Cấu trúc if/else 02</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container" style="margin-top: 50px">
+    <p>Bài 1</p>
+    <input type="text" id="celcius">
+    <input type="submit" onclick="bai1()"><br>
+    <p id="bai1"></p>
+
+    <p>Bài 2</p>
+    <input type="text" id="meter">
+    <input type="submit" onclick="bai2()"><br>
+    <p id="bai2"></p>
+
+    <p>Bài 3: tính S hình vuông</p>
+    <input type="text" id="a">
+    <input type="submit" onclick="bai3()"><br>
+    <p id="bai3"></p>
+
+    <p>Bài 4: tính S hình tam giác</p>
+    <input type="text" id="tg1">
+    <input type="text" id="tg2">
+    <input type="submit" onclick="bai4()"><br>
+    <p id="bai4"></p>
+
+    <p>Bài 5: giải pt bậc 1</p>
+    <input type="text" id="a1"><span> x+</span>
+    <input type="text" id="b1"><span> = </span>
+    <input type="text" id="c1">
+    <input type="submit" onclick="bai5()"><br>
+    <p id="bai5"></p>
+
+    <p>Bài 6: giải pt bậc 2</p>
+    <input type="text" id="a2"><span> x<sup>2</sup>+</span>
+    <input type="text" id="b2"><span> x +</span>
+    <input type="text" id="c2"><span> = </span>
+    <input type="text" id="d2">
+    <input type="submit" onclick="bai6()"><br>
+    <p id="bai6"></p>
+
+    <p>Bài 7: kiểm tra tuổi</p>
+    <input type="text" id="age">
+    <input type="submit" onclick="bai7()"><br>
+    <p id="bai7"></p>
+
+    <p>Bài 8: kiểm tra tam giác</p>
+    <input type="text" id="rec1">
+    <input type="text" id="rec2">
+    <input type="text" id="rec3">
+    <input type="submit" onclick="bai8()"><br>
+    <p id="bai8"></p>
+  </div>
+
+
+  <script>
+    function bai1() {
+      let celcius = parseFloat(document.getElementById('celcius').value);
+      let fah = celcius * (9 / 5) + 32;
+      document.getElementById("bai1").innerHTML = fah + "<sup>o</sup>F";
+    }
+
+    function bai2() {
+      let meter = parseFloat(document.getElementById('meter').value);
+      let feet = meter * 3.2808;
+      if (a <= 0) {
+        document.getElementById("bai2").innerHTML = "Not Valid";
+      } else {
+        document.getElementById("bai2").innerHTML = feet + " ft";
+      }
+    }
+
+    function bai3() {
+      let a = parseFloat(document.getElementById('a').value);
+      let area = a * a;
+      if (a <= 0) {
+        document.getElementById("bai3").innerHTML = "Not Valid";
+      } else {
+        document.getElementById("bai3").innerHTML = area + " m<sup>2</sup>";
+      }
+    }
+
+    function bai4() {
+      let tg1 = parseFloat(document.getElementById('tg1').value);
+      let tg2 = parseFloat(document.getElementById('tg2').value);
+      let area = 1 / 2 * tg1 * tg2;
+      if (tg1 <= 0 || tg2 <= 0) {
+        document.getElementById("bai4").innerHTML = "Not Valid";
+      } else {
+        document.getElementById("bai4").innerHTML = area + " m<sup>2</sup>";
+      }
+    }
+
+    function bai5() {
+      let a1 = parseFloat(document.getElementById('a1').value);
+      let b1 = parseFloat(document.getElementById('b1').value);
+      let c1 = parseFloat(document.getElementById('c1').value)
+      let result;
+      if (a1 == 0) {
+        document.getElementById("bai5").innerHTML = "Phương trình vô ngiệm";
+      } else {
+        if (b1 == 0) {
+          result = c1 / a1;
+          document.getElementById("bai5").innerHTML = "x = " + result;
+        } else {
+          result = (c1 - b1) / a1;
+          document.getElementById("bai5").innerHTML = "x = " + result;
+        }
+      }
+    }
+
+    function bai6() {
+      let a2 = parseFloat(document.getElementById('a2').value);
+      let b2 = parseFloat(document.getElementById('b2').value);
+      let c2 = parseFloat(document.getElementById('c2').value);
+      let d2 = parseFloat(document.getElementById('d2').value);
+      let delta = b2 * b2 - 4 * a2 * (c2 - d2);
+      let x;//dành cho pt bậc 1
+      let x1;
+      let x2;
+
+      if (a2 == 0) {//pt bậc 1
+        if (b2 == 0) {
+          document.getElementById("bai6").innerHTML = "Phương trình vô ngiệm";
+        } else {
+          if (c2 == 0) {
+            x = d2 / b2;
+            document.getElementById("bai6").innerHTML = "x = " + x;
+          } else {
+            x = (d2 - c2) / b2;
+            document.getElementById("bai6").innerHTML = "x = " + x;
+          }
+        }
+      }else{//pt bậc 2
+        if(delta < 0){
+          document.getElementById("bai6").innerHTML = "Phương trình vô nghiệm";
+        }else if(delta == 0){
+          x1 = x2 = (-b2)/2*a2; 
+          document.getElementById("bai6").innerHTML = "Phương trình có nghiệm kép: " + x1;
+        }else{
+          x1 = ((-b2 + Math.sqrt(delta)) / 2*a2);
+          x2 = ((-b2 - Math.sqrt(delta)) / 2*a2);
+          document.getElementById("bai6").innerHTML = "Phương trình có 2 nghiệm phân biệt là: " + "x1 = " + x1 + " ;x2 = " + x2;
+        }
+      }
+    }
+
+    function bai7() {
+      let age = parseFloat(document.getElementById('age').value);
+      if(age < 0 || age > 120){
+        document.getElementById('bai7').innerHTML = "Not valid";
+      }else{
+        document.getElementById('bai7').innerHTML = "Person";
+      }
+    }
+
+    function bai8() {
+      let rec1 = parseFloat(document.getElementById('rec1').value);
+      let rec2 = parseFloat(document.getElementById('rec2').value);
+      let rec3 = parseFloat(document.getElementById('rec3').value);
+      if(rec1 > 0 && rec2 > 0 && rec3 >0){
+        if(rec1 + rec2 > rec3 && rec1 + rec3 > rec2 && rec2 + rec3 > rec1){
+          document.getElementById('bai8').innerHTML = "Là 1 Hình Tam Giác";
+        }else{
+          document.getElementById('bai8').innerHTML = "Không phải là 1 hình tam giác";
+        }
+      }else{
+        document.getElementById('bai8').innerHTML = "Not valid";
+      }
+    }
+  </script>
+</body>
+
+</html>
