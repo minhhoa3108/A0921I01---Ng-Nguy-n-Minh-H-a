@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Luyện Tập Vòng lặp 01</title>
+</head>
+
+<body>
+  <p>Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.</p>
+  <p id="bai1"></p>
+
+  <p>Bài 2:</p>
+  <input type="text" id="temp">
+  <input type="button" value="Submit" onclick="bai2()">
+  <p id="bai2"></p>
+
+
+  <script>
+    function bai1() {
+      let bai1 = '';
+      for (let i = 1; i <= 100; i++) {
+        console.log(i);
+      }
+      document.getElementById("bai1").innerHTML = bai1;
+    }
+
+    function bai2() {
+      let temp = parseFloat(document.getElementById('temp').value);
+      if(temp >= 100){
+        document.getElementById("bai2").innerHTML = "Người dùng cần giảm nhiệt độ";
+      }else if(temp <= 20){
+        document.getElementById("bai2").innerHTML = "Người dùng cần tăng nhiệt độ";
+      }else{
+        document.getElementById("bai2").innerHTML = "Nhiệt độ người dùng hiện bình thường";
+      }
+    }
+
+  </script>
+</body>
+
+</html>

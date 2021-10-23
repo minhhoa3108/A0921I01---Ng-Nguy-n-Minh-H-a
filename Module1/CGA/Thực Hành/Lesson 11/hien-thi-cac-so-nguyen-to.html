@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hiển thị các số nguyên tố</title>
+</head>
+
+<body>
+  
+    <input type="text" id="num">
+    <input type="button" value="submit" onclick="cal()">
+
+    <p id="result"></p>
+  
+
+  <script>
+    function cal() {
+      let num = parseInt(document.getElementById("num").value);
+      let result = '';
+      if (num <= 0) {
+        document.getElementById("result").innerHTML = "Hãy Nhập số nguyên dương";
+      } else {
+        let count = 1;
+        for(let i = 0; count <= num; i++) {
+          if(testNum(i)){
+            count++;
+            result += i + ", ";
+            console.log(1);
+          }
+          
+        }
+      }
+      document.getElementById("result").innerHTML = result;
+    }
+
+    function testNum(num){
+      let check = true;
+      if(num < 2){
+        check = false;
+      }else{
+        for(let i = 2; i <= Math.sqrt(num); i++){
+        if(num % i == 0){
+          check = false;
+          break;
+        }
+        }
+      }
+
+      
+      return check;
+    }
+  </script>
+</body>
+
+</html>

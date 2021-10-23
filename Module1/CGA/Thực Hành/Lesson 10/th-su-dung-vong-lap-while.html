@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thực Hành: Sử Dụng Vòng Lặp While, Do-While</title>
+  </head>
+  <body>
+    <script>
+      //bài 1
+      /*
+      let num = prompt("Enter num: ");
+      let total = 0;
+      while(num != -1){
+        num = prompt("Enter num or -1 to exit");
+        alert(num);
+        total += num;
+      }*/
+
+      // bài 2
+      /*let i = 1;
+      while(i <= 100){
+        document.write("<hr width= " + i + "%>");
+        i++;
+      }*/
+
+      //do-while
+      let num = null;
+      do{
+        num = prompt("Nhập số từ 1->10");
+      }while(num < 1 || num > 10);
+      alert(num);
+    </script>
+  </body>
+</html>
