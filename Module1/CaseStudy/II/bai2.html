@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bài 2</title>
+  </head>
+  <body>
+    <input type="text" id="word">
+    <input type="submit" onclick="bai2()">
+    <p id="result"></p>
+
+    <script>
+      function bai2() {
+        let word = document.getElementById("word").value;
+        let result = '';
+        switch(word) {
+          case 'o':
+          case 'u':
+          case 'i':
+          case 'a':
+          case 'e':
+            result = 'Là Nguyên Âm';
+            document.getElementById('result').innerHTML = result;
+            break;
+          default:
+            result = 'Là Phụ Âm'
+            document.getElementById('result').innerHTML = result;
+            break;
+        }
+        
+      }
+    </script>
+  </body>
+</html>

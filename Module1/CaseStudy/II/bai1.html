@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bài 1</title>
+  </head>
+  <body>
+    <input type="text" id="salary">
+    <input type="submit" onclick="bai1()">
+    <p>Lương của nhân viên là:</p>
+    <p id="total"></p>
+
+    <script>
+      function bai1() {
+        let salary = parseInt(document.getElementById('salary').value);
+        let total = 0;
+        if(salary >= 15000000){
+          total = salary - salary*0.2;
+          document.getElementById('total').innerHTML = total + 'VND';
+        }else if(7000000 < salary && salary < 15000000){
+          total = salary - salary*0.1;
+          document.getElementById('total').innerHTML = total + 'VND';
+        }else{
+          total = salary - salary*0.05;
+          document.getElementById('total').innerHTML = total + 'VND';
+        }
+
+      }
+    </script>
+  </body>
+</html>

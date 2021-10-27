@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>bài 1-2</title>
+</head>
+
+<body>
+  <p>In dãy Fibonacci</p>
+  <p id="bai1"></p>
+
+  <p>Tính giai thừa 1 số nguyên dương</p>
+  <input type="text" id='num'>
+  <input type="submit" value="submit" onclick="bai2()">
+  <p id="bai2"></p>
+  <script>
+    //bai1
+    let result = '';
+    let temp;
+    let count = 0;
+    let a = 0, b = 1;
+    result = a;
+    while (count < 30) {
+      temp = b;
+      b = a + b;
+      a = temp;
+      result += ', ' + temp;
+      count++;
+    }
+    document.getElementById("bai1").innerHTML = result;
+
+    //bai 2
+    function bai2() {
+      let num = parseInt(document.getElementById("num").value);
+      let result = 1;
+      for(let i = 1; i <= num; i++){
+        result *= i;
+      }
+      document.getElementById("bai2").innerHTML = result;
+    }
+
+  </script>
+</body>
+
+</html>

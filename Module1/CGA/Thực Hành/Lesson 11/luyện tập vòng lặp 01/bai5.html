@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>bài 3</title>
+    <title>bài 5</title>
   </head>
   <body>
-    <p>Hiển thị 20 số đầu tiên trong dãy Fibonacci</p>
-    <p id="bai3" ></p>
+    <p>Tính tổng 20 số đầu tiên trong dãy fibonacci</p>
+    <p id="bai5" ></p>
 
     <script>
-        let result = '';
+        let result;
         let temp;
         let count=0;
         let a = 0, b = 1;
@@ -18,10 +18,10 @@
           temp = b;
           b = a + b;
           a = temp;
-          result += ', ' + temp;
+          result += temp;
           count++;
         }
-        document.getElementById("bai3").innerHTML = result;
+        document.getElementById("bai5").innerHTML = result;
     
     </script>
   </body>
