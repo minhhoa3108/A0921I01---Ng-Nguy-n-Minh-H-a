@@ -7,12 +7,9 @@
 </head>
 
 <body>
-  <p id="bai3_1"></p>
-  <p id="bai3_2"></p>
-  <p id="bai3_3"></p>
-  <p id="bai3_4"></p>
 
   <script>
+    // hình 1
     for (i = 0; i < 5; i++) {
       for (j = 0; j <= i; j++) {
         document.write("*");
@@ -22,6 +19,7 @@
 
     document.write("<br>");
 
+    //hình 2
     for (i = 5; i > 0; i--) {
       for (j = 1; j <= i; j++) {
         document.write("*");
@@ -30,10 +28,16 @@
     }
 
     document.write("<br>");
-
-    for (i = 0; i < 5; i++) {
-      for (j = 0; j <= i; j++) {
-        document.write("*");
+    //hình 3
+    for ( i = 1; i <= 5; i++)
+    {
+      for ( j = 1; j <= 5; j++)
+      {
+        if (j <= 5 - i) {
+          document.write("  ");
+        } else {
+          document.write("*");
+        }
       }
       document.write("<br>");
     }
