@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dictionary</title>
+</head>
+
+<body>
+  <input type="text" id="dictionary">
+  <input type="submit" value="Translate" onclick="translate()"><br>
+  <p id="result"></p>
+
+  <script>
+    function translate() {
+      let english = ['hello', 'go', 'world', 'run', 'jump'];
+      let vietnam = ['xin chào', 'đi', 'thế giới', 'chạy', 'nhảy'];
+
+      let dictionary = document.getElementById('dictionary').value;
+      for(let i = 0; i < english.length; i++) {
+        if(dictionary == english[i]) {
+          let trans = english.indexOf(english[i]);
+          let result = vietnam[trans];
+          break;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
