@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ứng dụng quản lý sản phẩm</title>
+  </head>
+  <body>
+    <p>Add new product</p>
+    <input type="text" id="product">
+    <input type="submit" value="Add" onclick="addProduct()">
+    <br>
+    <p id="show"></p>
+
+
+    <script>
+    function addProduct() {
+      let product = document.getElementById("product").value;
+      let arr = [];
+      arr.push(product);
+      document.getElementById("show").innerHTML = arr;
+    }
+    </script>
+  </body>
+</html>

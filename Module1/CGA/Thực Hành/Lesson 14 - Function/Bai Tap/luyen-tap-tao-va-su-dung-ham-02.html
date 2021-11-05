@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Luyện tập và sử dụng hàm 02</title>
+  </head>
+  <body>
+    <p>Bài 01</p>
+    <input type="text" id="num_bai1">
+    <input type="submit" value="bài 1" onclick="bai1()">
+    <p id="bai1"></p>
+
+    <p>Bài 02</p>
+    <input type="text" id="radius">
+    <input type="submit" value="bài 2" onclick="bai2()">
+    <p id="bai2_1"></p>
+    <p id="bai2_2"></p>
+
+    <p>Bài 03</p>
+    <input type="text" id="num_bai3">
+    <input type="submit" value="bài 3" onclick="bai3()">
+    <p id="bai3"></p>
+
+    <p>Bài 04</p>
+    <input type="text" id="num_bai4">
+    <input type="submit" value="bài 4" onclick="bai4()">
+    <p id="bai4"></p>
+
+
+    <p>Bài 05</p>
+    <input type="text" id="num_bai5_1">
+    <input type="text" id="num_bai5_2">
+    <input type="text" id="num_bai5_3">
+    <input type="submit" value="bài 5" onclick="bai5()">
+    <p id="bai5"></p>
+
+    <p>Bài 06</p>
+    <input type="text" id="num_bai6">
+    <input type="submit" value="bài 6" onclick="bai6()">
+    <p id="bai6"></p>
+
+
+    <p>Bài 07</p>
+    <input type="text" id="num_bai7_1">
+    <input type="text" id="num_bai7_2">
+    <input type="submit" value="bài 7" onclick="bai7()">
+    <p id="bai7"></p> 
+
+    <script>
+      function bai1() {
+        let num_bai1 = parseFloat(document.getElementById('num_bai1').value);
+        function square(num_bai1) {
+          return num_bai1 * num_bai1;
+        }
+        let result = 0;
+        result = square(num_bai1);
+        document.getElementById("bai1").innerHTML = result;
+      }
+
+
+      function bai2(){
+        let radius = parseFloat(document.getElementById("radius").value);
+        function area(radius) {
+          return 3.14*radius*radius;
+        }
+        function perimeter(radius) {
+          return 2*3.14*radius;
+        }
+        let area1 = 0;
+        area1 = area(radius);
+        document.getElementById("bai2_1").innerHTML = "Diện tích hình tròn: " + area1;
+
+        let perimeter1 = 0;
+        perimeter1 = perimeter(radius);
+        document.getElementById("bai2_2").innerHTML = "Chu vi hình tròn: " + perimeter1;
+      }
+
+
+      function bai3() {
+        let num_bai3 = parseInt(document.getElementById("num_bai3").value);
+        let factorial1 = 1;
+        function factorial(num_bai3){
+          for(let i = 1; i <= num_bai3; i++){
+            factorial1 *= i;
+          }
+          return factorial1;
+        }
+        let result = 0;
+        result = factorial(num_bai3);
+        document.getElementById("bai3").innerHTML = num_bai3 + "! = " + result;
+      }
+
+
+      function bai4() {
+        let num_bai4 = parseFloat(document.getElementById("num_bai4").value);
+        function isNumber(num_bai4) {
+          let result = '';
+          if(typeof num_bai4 == "number"){
+            result = 'là ký tự số';
+          }else{
+            result = 'không là ký tự số';
+          }
+          return result;
+        }
+        let result1 = '';
+        result1 = isNumber(num_bai4);
+        document.getElementById("bai4").innerHTML = result1;
+      }
+
+
+      function bai5() {
+        let num_bai5_1 = parseInt(document.getElementById("num_bai5_1").value);
+        let num_bai5_2 = parseInt(document.getElementById("num_bai5_2").value);
+        let num_bai5_3 = parseInt(document.getElementById("num_bai5_3").value);
+        function gtnn(num_bai5_1, num_bai5_2, num_bai5_3){
+          let max = 0;
+          if(num_bai5_1 > num_bai5_2){
+            if(num_bai5_1 > num_bai5_3){
+              max = num_bai5_1;
+            }else{
+              max = num_bai5_3;
+            }
+          }else{
+            if(num_bai5_2 > num_bai5_3){
+              max = num_bai5_2;
+            }else{
+              max = num_bai5_3;
+            }
+          }
+          return max;
+        }
+        let result = 0;
+        result = gtnn(num_bai5_1, num_bai5_2, num_bai5_3);
+        document.getElementById("bai5").innerHTML = "Số lớn nhất là: " + result;
+      }
+
+
+      function bai6() {
+        let num_bai6 = parseFloat(document.getElementById("num_bai6").value);
+        function positive(num_bai6) {
+          let number = true;
+          if(num_bai6 >= 0){
+            number = true;
+          }else{
+            number = false;
+          }
+          return number;
+        }
+        let result;
+        result = positive(num_bai6);
+        document.getElementById("bai6").innerHTML = result;
+      }
+
+
+      function bai7() {
+        let num_bai7_1 = parseFloat(document.getElementById("num_bai7_1").value);
+        let num_bai7_2 = parseFloat(document.getElementById("num_bai7_2").value);
+      }
+    </script>
+  </body>
+</html>

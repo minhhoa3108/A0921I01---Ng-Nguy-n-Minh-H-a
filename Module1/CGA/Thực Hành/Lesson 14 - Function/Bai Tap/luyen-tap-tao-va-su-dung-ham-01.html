@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Luyện tập và sử dụng hàm 01</title>
+</head>
+
+<body>
+  <p>Bài 2</p>
+  <input type="text" id="num2">
+  <input type="submit" value="bài 2" onclick="bai2()">
+  <p id="bai2"></p><br>
+
+  <p>Bài 3</p>
+  <input type="text" id="num3_1">
+  <input type="text" id="num3_2">
+  <input type="submit" value="bài 3" onclick="bai3()">
+  <p id="bai3"></p>
+
+  <p>Bài 4</p>
+  <input type="submit" value="bài 4" onclick="bai4()">
+
+  <script>
+    alert('xin chào');
+
+    function bai2() {
+      let num = parseInt(document.getElementById("num2").value);
+      let result = num + 1;
+      document.getElementById("bai2").innerHTML = result;
+    }
+
+    function bai3() {
+      let num1 = parseFloat(document.getElementById('num3_1').value);
+      let num2 = parseFloat(document.getElementById('num3_2').value);
+      let result = 0;
+      if (num1 >= num2) {
+        document.getElementById("bai3").innerHTML = "Xin chào";
+      } else {
+        result = num1 + num2;
+        document.getElementById("bai3").innerHTML = result;
+      }
+    }
+
+    function bai4() {
+      firstNum = 4;
+      secondNum = 8;
+      result = firstNum + secondNum;
+      return result;
+    }
+    result = 0;
+    result = bai4();
+    alert(result);
+  </script>
+</body>
+
+</html>

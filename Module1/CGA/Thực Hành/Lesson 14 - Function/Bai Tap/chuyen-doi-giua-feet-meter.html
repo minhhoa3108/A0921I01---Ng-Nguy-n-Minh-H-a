@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Chuyển đổi giữa feet và meter</title>
+</head>
+
+<body>
+  <p>Feet sang meter - meter sang feet</p>
+  <input type="text" id="num">
+  <input type="submit" value="to Feet" onclick="feet()">
+  <input type="submit" value="to meter" onclick="meter()">
+  <p id="result"></p>
+
+  <script>
+    let num = document.getElementById("num");
+    var result = 0;
+    function feet() {
+      let num_feet = parseInt(num.value);
+      result = 0.305 * num_feet;
+      document.getElementById("result").innerHTML = result + " ft";
+    }
+
+    function meter() {
+      let num_meter = parseInt(num.value);
+      result = 3.279 * num_meter;
+      document.getElementById("result").innerHTML = result + " m";
+    }
+  </script>
+</body>
+
+</html>
