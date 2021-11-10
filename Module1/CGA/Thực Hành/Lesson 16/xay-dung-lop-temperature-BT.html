@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Xây dựng lớp Temperature</title>
+  </head>
+  <body>
+    <input type="text" id="value">
+    <input type="button" onclick="toF()" value="change to Fahrenheit">
+    <input type="button" onclick="toK()" value="change to Kelvin">
+    <p id="result"></p>
+    
+    <script>
+      let Temperature = function (celcius) {
+        this.celcius = celcius;
+
+        this.getCelsius = function () {
+          return celcius;
+        }
+
+        this.getFahrenheit = function () {
+          return (celcius * 1.8) + 32;
+        }
+        this.getKelvin = function () {
+          return celcius + 273.15;
+        }
+      }
+
+      let value = document.getElementById('value').value;
+      let temperature = new Temperature(value);
+      function toF() {
+        let toF = temperature.getFahrenheit();
+        document.getElementById('result').innerHTML = toF + ' F<br>';
+      }
+      function toK() {
+        let toK = temperature.getKelvin();
+        document.getElementById('result').innerHTML = toK + ' K';
+      }
+    </script>
+  </body>
+</html>
