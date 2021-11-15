@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Array Sum</title>
+  </head>
+  <body>
+    
+    <script>
+      let n = parseInt(prompt('How many numbers do you want to sum?'));
+      let sum = 0;
+      for(let i = 1; i <= n; i++){
+        let num = parseFloat(prompt("Enter the number " + i));
+        sum += num;
+      }
+      alert('Sum is: ' + sum);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Diagonal Different</title>
+  </head>
+  <body>
+    <p id="result"></p>
+    
+    <script>
+      let n = parseInt(prompt('Bạn muốn nhập mảng mấy chiều: '));
+      let arr = [];
+
+      for (let i = 0; i < n; i++){
+        arr[i] = [];
+        for (let j = 0; j < n; j++){
+          arr[i][j] = parseInt(prompt('Nhập số thứ ' + arr[i][j]));
+        }
+      }
+
+      document.getElementById('result').innerHTML = arr;
+    </script>
+  </body>
+</html>

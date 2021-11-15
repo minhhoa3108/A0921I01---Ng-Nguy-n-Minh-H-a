@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Solve Me First</title>
+  </head>
+  <body>
+    <label for="">Enter a: </label>
+    <input type="text" id="a"><br><br>
+
+    <label for="">Enter b: </label>
+    <input type="text" id="b"><br><br>
+
+    <input type="button" value="Calculator" onclick="calculate()"><br><br>
+    <p id="result"></p>
+    
+    <script>
+      function calculate(){
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let c = a + b;
+        document.getElementById("result").innerHTML = 'Result is: ' + c;
+      }
+    </script>
+  </body>
+</html>

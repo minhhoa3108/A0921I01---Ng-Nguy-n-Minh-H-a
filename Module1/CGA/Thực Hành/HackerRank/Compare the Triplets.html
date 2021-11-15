@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Compare the Triplets</title>
+  </head>
+  <body>
+    <label for="">Triplets of Alice: </label><br>
+    <input type="text" id="a1">
+    <input type="text" id="a2">
+    <input type="text" id="a3"><br><br>
+
+    <label for="">Triplets of Bob</label><br>
+    <input type="text" id="b1">
+    <input type="text" id="b2">
+    <input type="text" id="b3"><br><br>
+
+    <input type="button" value="Compare" onclick="compare()"><br><br>
+    <table cellpadding="10">
+      <tr>
+        <th>Alice</th>
+        <th>Bob</th>
+      </tr>
+      <tr>
+        <td id="result_a"></td>
+        <td id="result_b"></td>
+      </tr>
+    </table>
+
+    <script>
+      function compare() {
+        let a1 = parseFloat(document.getElementById('a1').value);
+        let a2 = parseFloat(document.getElementById('a2').value);
+        let a3 = parseFloat(document.getElementById('a3').value);
+
+        let b1 = parseFloat(document.getElementById('b1').value);
+        let b2 = parseFloat(document.getElementById('b2').value);
+        let b3 = parseFloat(document.getElementById('b3').value);
+
+        let result_a = 0;
+        let result_b = 0;
+        let result = 0
+
+        if(a1 > b1){
+          result_a++;
+        }else if(a1 < b1){
+          result_b++;
+        }else{
+          result++;
+        }
+
+        if(a2 > b2){
+          result_a++;
+        }else if(a2 < b2){
+          result_b++;
+        }else{
+          result++;
+        }
+
+        if(a3 > b3){
+          result_a++;
+        }else if(a3 < b3){
+          result_b++;
+        }else{
+          result++;
+        }
+
+        document.getElementById('result_a').innerHTML = result_a;
+        document.getElementById('result_b').innerHTML = result_b;
+      }
+    </script>
+  </body>
+</html>

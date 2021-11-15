@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Adam - Eva</title>
+  </head>
+  <body>
+    
+    <script>
+      let Apple = function (weight) {
+        this.weight = weight;
+        
+        this.getWeight = function(){
+          return this.weight;
+        }
+        
+      };
+
+      let Person = function (name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+
+
+        this.checkWeight = function (apple) {
+          let appleWeight = 0;
+          if(apple.weight < 10){
+            appleWeight = 10;
+            alert('Khối lượng quả táo ban đầu: ' + appleWeight);
+          }
+          return appleWeight;
+        }
+
+        this.checkPerson = function (){
+          alert('Tên là: ' + this.name + ', giới tính: ' + this.gender + ', cân nặng: ' + this.weight);
+        }
+        this.say = function () {
+          alert(this.name);
+        }
+
+        this.eat = function (weightApple) {
+          while(weightApple >= 0){
+            this.weight++;
+            weightApple--;
+          }
+          alert('Cân nặng con người là sau khi ăn: ' + this.weight + ', khối lượng quả táo sau khi ăn là: ' + weightApple);
+        }
+      };
+
+      let apple = new Apple(5);
+
+      let person = new Person('Nguyễn Văn A', 'Nam', 70);
+      person.checkPerson();
+      person.say();
+      let appleWeight = person.checkWeight(apple);
+      person.eat(appleWeight);
+      
+    </script>
+  </body>
+</html>
