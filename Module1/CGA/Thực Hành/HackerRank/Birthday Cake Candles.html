@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Birthday Cake Candles</title>
+  </head>
+  <body>
+    <p id="result"></p>
+
+    <script>
+      let n = parseInt(prompt('Bạn muốn nhập bao nhiêu số: '));
+      let max = 0;
+      let count = 0;
+      let arr = [];
+
+      for (let i = 0; i < n; i++){
+        arr[i] = parseInt(prompt('Nhập giá trị cho mảng: '));
+      }
+
+      for (let i = 0; i < n; i++){//[1, 5, 3, 5]
+        if(max <= arr[i]){
+          max = arr[i];
+          count++;
+        }
+      }
+
+
+    </script>
+  </body>
+</html>

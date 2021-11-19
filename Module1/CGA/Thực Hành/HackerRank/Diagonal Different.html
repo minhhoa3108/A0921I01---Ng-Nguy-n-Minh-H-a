@@ -10,15 +10,25 @@
     <script>
       let n = parseInt(prompt('Bạn muốn nhập mảng mấy chiều: '));
       let arr = [];
+      let sum = 0;
+      let show = '';
 
       for (let i = 0; i < n; i++){
         arr[i] = [];
         for (let j = 0; j < n; j++){
-          arr[i][j] = parseInt(prompt('Nhập số thứ ' + arr[i][j]));
+          arr[i][j] = parseInt(prompt('Nhập số cho mảng '));
+          show += arr[i][j] + ',  ';
+        }
+        show += '<br>';
+      }
+
+      for(let i = 0; i < n; i++){
+        for (let j = i; j < i + 1; j++){
+          sum += arr[i][j];
         }
       }
 
-      document.getElementById('result').innerHTML = arr;
+      document.getElementById('result').innerHTML = show + '<br><br>' + sum;
     </script>
   </body>
 </html>

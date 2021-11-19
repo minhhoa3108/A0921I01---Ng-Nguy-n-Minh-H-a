@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Plus Minus</title>
+  </head>
+  <body>
+    <p id="result"></p>
+
+    <script>
+      let n = parseInt(prompt('Bạn muốn nhập bao nhiêu số?'));
+      let arr = [];
+      let show = '';
+      let positive = 0;
+      let negative = 0;
+      let zero = 0;
+      let positive_result = 0;
+      let negative_result = 0;
+      let zero_result = 0;
+
+      for (let i = 0; i < n; i++){
+        arr[i] = parseInt(prompt('Nhập giá trị cho mảng: '));
+        show += arr[i] + ',  ';
+      }
+
+      for (let i = 0; i < n; i++){
+        if(arr[i] < 0){
+          negative++;
+        }else if(arr[i] > 0){
+          positive++;
+        }else{
+          zero++;
+        }
+      }
+
+      positive_result = positive/n;
+      negative_result = negative/n;
+      zero_result = zero/n;
+
+      document.getElementById('result').innerHTML = show + '<br>Positive: ' + positive_result + ', Negative: '  + negative_result + ', Zero: ' + zero_result;
+    </script>
+  </body>
+</html>
