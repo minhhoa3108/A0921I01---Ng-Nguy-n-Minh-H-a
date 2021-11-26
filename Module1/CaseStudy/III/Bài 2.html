@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bài 2 - III</title>
+</head>
+
+<body>
+
+  <script>
+    let test = [];
+    let a = parseInt(prompt('Bạn muốn nhập bao nhiêu số Mảng a: '));
+    let arr_a = [];
+
+    for (let i = 0; i < a; i++) {
+      arr_a[i] = parseInt(prompt('Nhập giá trị cho Mảng a: '));
+    }
+
+
+
+    let b = parseInt(prompt('Bạn muốn nhập bao nhiêu số Mảng b: '));
+    let arr_b = [];
+
+    for (let i = 0; i < b; i++) {
+      arr_b[i] = parseInt(prompt('Nhập giá trị cho Mảng b: '));
+    }
+
+
+
+    for (let i = 0; i < arr_a.length; i++) {
+      for (let j = 0; j < arr_b.length; j++) {
+        if (arr_b[i] == arr_a[j]) {
+          arr_b.splice(i, 1);
+        }
+      }
+    }
+
+    arr_b.sort(function (a, b) {
+      return a - b;
+    });
+
+    alert(arr_b);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bài 4 - III</title>
+</head>
+
+<body>
+
+  <script>
+    let n = parseInt(prompt('Nhập số n: '));
+    let temp = 0;
+    let result = '';
+
+    while (n != 0) {
+      temp = (temp * 10) + (n % 10);
+      n /= 10;
+    }
+
+    while (temp != 0) {
+      switch (temp % 10) {
+        case 0:
+          result += 'Không ';
+          break;
+        case 1:
+          result += 'một ';
+          break;
+        case 2:
+          result += 'hai ';
+          break;
+        case 3:
+          result += 'ba ';
+          break;
+        case 4:
+          result += 'bốn ';
+          break;
+        case 5:
+          result += 'năm ';
+          break;
+        case 6:
+          result += 'sáu ';
+          break;
+        case 7:
+          result += 'bảy ';
+          break;
+        case 8:
+          result += 'tám ';
+          break;
+        case 9:
+          result += 'chín ';
+          break;
+      }
+      temp = temp / 10;
+    }
+
+    alert(result);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bài 3 - III</title>
+  </head>
+  <body>
+    
+    <script>
+      let n = parseInt(prompt('Bạn muốn nhập bao nhiêu phân số: '));
+      let numerators = []
+      let denominators = [];
+      let result = 0;
+      let result1 = [];
+      let max = 0;
+
+
+      for(let i = 0; i < n; i++){
+        numerators[i] = parseInt(prompt('Nhập các tử số: '));
+      }
+      for(let i = 0; i < n; i++){
+        denominators[i] = parseInt(prompt('Nhập các mẫu số: '));
+      }
+
+      for(let i = 0; i < n; i++){//5, 2, 5 //6, 3, 4
+        result += numerators[i]/denominators[i];
+        result1.push(result);
+      }
+
+      for(let i = 0; i < result1.length; i++){
+        if(max < result1[i]){
+          max = result1[i];
+        }
+      }
+
+      alert('Phân số lớn nhất là: ' + max + ', ở vị trí thứ: ' + result1.indexOf(max));
+    </script>
+  </body>
+</html>

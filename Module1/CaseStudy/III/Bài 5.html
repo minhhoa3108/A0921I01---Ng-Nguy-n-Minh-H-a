@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bài 5 - III</title>
+  </head>
+  <body>
+
+    <script>
+      alert("Mời bạn chọn món!!!");
+      let value1 = parseInt(prompt('Cafe: 10đ. Nhập số lượng:'));
+      let value2 = parseInt(prompt('Cam Vắt: 20đ. Nhập số lượng:'));
+      let value3 = parseInt(prompt('Nươc ép cà rốt: 30đ. Nhập số lượng:'));
+      let value4 = parseInt(prompt('Nước ép cà chua: 40đ. Nhập số lượng:'));
+      let value5 = parseInt(prompt('Nước lọc: 50đ. Nhập số lượng:'));
+      let value6 = parseInt(prompt('Nước dừa: 60đ. Nhập số lượng:'));
+      let price = 0;
+
+      let value7 = parseInt(prompt('Bạn muốn tiếp tục không. Nhập 0: Để thoát. 1: Để tiếp tục'));
+      if (value7 == 0){
+        alert('Tạm Biệt!');
+      }else if (value7 == 1){
+        price = value1*10 + value2*20 + value3*30 + value4*40 + value5*50 + value6*60;
+        alert('Tổng tiền là: ' + price);
+      }else{
+        alert('Not Valid');
+      }
+    </script>
+
+  </body>
+</html>

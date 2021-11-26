@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    
+    <script>
+      let n = parseInt(prompt('Bạn muốn nhập ma trận vuông cấp bao nhiêu: '));
+      let arr = [];
+      let result = '';
+      let sum = 0;
+
+      for (let i = 0; i < n; i++){
+        arr[i] = [];
+        for (let j = 0; j < n; j++){
+          arr[i] += parseFloat(prompt('Nhập giá trị cho mảng'));
+          result += arr[i][j] + '  ';
+        }
+        result += '<br>';
+      }
+      
+      for (let i = 0; i < n; i++){
+        for (let j = 0; j < n; j++){
+          sum += parseFloat(arr[i][j]);
+        }
+      }
+
+      document.write(result);
+      document.write('<br>');
+      document.write(sum);
+    </script>
+  </body>
+</html>

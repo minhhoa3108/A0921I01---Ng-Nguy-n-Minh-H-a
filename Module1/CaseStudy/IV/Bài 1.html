@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bài 1 - IV</title>
+</head>
+<body>
+  
+  <script>
+    let str = prompt("Hãy Nhập Tên Ai Đó: ");
+    function uppercaseFirtCharacter(str){
+      let splitStr = str.toLowerCase().split(' ');
+      for(let i = 0; i < splitStr.length; i++){
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+      }
+      return splitStr.join(' ');
+    }
+
+    document.write(uppercaseFirtCharacter(str));
+
+  </script>
+</body>
+
+</html>
