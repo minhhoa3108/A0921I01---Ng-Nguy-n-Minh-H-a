@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    
+    <script>
+      let numerators = [];
+      let denominators = [];
+
+      for (let i = 0; i < 2; i++){
+        numerators[i] = parseInt(prompt('Nhập các giá trị tử:'));
+      }
+      for (let i = 0; i < 2; i++){
+        denominators[i] = parseInt(prompt('Nhập các giá trị ở mẫu:'));
+      }
+
+      function fractions(numerators, numerators){
+        let max = 0;
+        let result = [];
+        let check  = false;
+        for (let i = 0; i < 2; i++){
+          result[i] = numerators[i] / denominators[i];
+        }
+        if(result[0] > result[1]){
+          check = false;
+        }else if(result[0] < result[1]){
+          check  = false;
+        }else{
+          check = true;
+        }
+        return check;
+      }
+
+      let show = false;
+      show = fractions(numerators, numerators);
+      alert(show);
+    </script>
+  </body>
+</html>

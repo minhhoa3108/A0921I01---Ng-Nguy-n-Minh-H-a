@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    
+    <script>
+      let n = parseInt(prompt('Bạn muốn nhập bao nhiều số?'));
+      let a = [];
+      let b = [];
+
+      for (let i = 0; i < n; i++) {
+        a[i] = parseInt(prompt('Nhập giá trị cho mảng'));
+      }
+
+      for (let i = 0; i < n; i++) {
+        if(a[i] >= 2){
+          for (let j = 1; j <= Math.sqrt(a[i]); j++) {
+            if(a[i] % j != 0){
+              b[i] = a[i];
+            }
+          }
+        }
+      }
+
+      alert('Các giá trị mảng a là: ' + a);
+      alert('Các giá trị mảng b là: ' + b);
+    </script>
+  </body>
+</html>

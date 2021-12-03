@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    
+    <div>
+      <label for="">ID</label><br>
+      <input type="text" id="ID"><br><br>
+
+      <label for="">Loại</label><br>
+      <input type="text" id="loai"><br><br>
+
+      <label for="">Tên</label><br>
+      <input type="text" id="ten"><br><br>
+
+      <label for="">CMND</label><br>
+      <input type="text" id="cmnd"><br><br>
+
+      <label for="">Ngày mở sổ</label><br>
+      <input type="text" id="nms"><br><br>
+
+      <label for="">Số Tiền</label><br>
+      <input type="text" id="sotien"><br><br>
+      <input type="button" value="Xử Lý" onclick="nhapthongtin()">
+
+      <p id="result"></p>
+    </div>
+    
+    <script>
+      class SOTIETKIEM{
+        constructor(id, loai, ten, cmnd, nms, sotien){
+          this.id = id;
+          this.loai = loai;
+          this.ten = ten;
+          this.cmnd = cmnd;
+          this.nms = nms;
+          this.sotien = sotien;
+        }
+
+        setID(id){
+          this.id = id;
+        }
+        getID(){
+          return this.id;
+        }
+
+        setLoai(loai){
+          this.loai = loai;
+        }
+        getLoai(){
+          return this.loai;
+        }
+
+        setTen(ten){
+          this.ten = ten;
+        }
+        getTen(){
+          return this.ten;
+        }
+
+        setCmnd(cmnd){
+          this.cmnd = cmnd;
+        }
+        getCmnd(){
+          return this.cmnd;
+        }
+
+        setNms(nms){
+          this.nms = nms;
+        }
+        getNms(){
+          return this.nms;
+        }
+
+        setSotien(sotien){
+          this.sotien = sotien;
+        }
+        getSotien(){
+          return this.sotien;
+        }
+      }
+
+      let arrSTK = [];
+
+      function nhapthongtin(){
+        let arr = [];
+        let id = getElementById('ID').value;
+        let loai = getElementById('loai').value;
+        let ten = getElementById('ten').value;
+        let cmnd = getElementById('cmnd').value;
+        let nms = getElementById('nms').value;
+        let sotien = getElementById('sotien').value;
+
+        let sotietkiem = new SOTIETKIEM(id, loai, ten, cmnd, nms, sotien);
+        arrSTK.push(sotietkiem);
+        hienthithongtin(arrSTK);
+      }
+
+      function hienthithongtin(arr){
+        let str = '';
+
+        for (let i = 0; i < arr.length; i++){
+          str += "ID: " + arr[i].getID + ", " +
+                "Loại: " + arr[i].getLoai + ", " +
+                "Tên: " + arr[i].getTen + ", " +
+                "CMND: " + arr[i].getCmnd + ", " +
+                "Ngày mở sổ: " + arr[i].getNms + ", " +
+                "Số tiền: " + arr[i].getSotien + "."
+        }
+        document.getElementById("result").innerHTML = str;
+      }
+    </script>
+  </body>
+</html>
