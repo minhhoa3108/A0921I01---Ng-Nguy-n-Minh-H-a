@@ -1,8 +1,6 @@
 package session2.bai_tap;
 
-import java.util.Scanner;
-
-public class List_n_Prime {
+public class ListPrimeLess100 {
     public static void main(String[] args) {
         int count = 0;
         int m = 2;
@@ -18,7 +16,7 @@ public class List_n_Prime {
                 count++;
                 System.out.print(m + ", ");
             }
-            if (count >= 20) {
+            if (m >= 100) {
                 break;
             }
             m++;
