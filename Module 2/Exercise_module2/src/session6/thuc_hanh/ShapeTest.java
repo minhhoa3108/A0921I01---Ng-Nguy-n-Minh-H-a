@@ -1,5 +1,7 @@
 package session6.thuc_hanh;
 
+import java.util.Scanner;
+
 public class ShapeTest {
     public static void main(String[] args) {
         //Kiểm tra class Shape
