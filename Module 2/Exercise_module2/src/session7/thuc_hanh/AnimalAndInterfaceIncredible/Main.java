@@ -1,4 +1,4 @@
-package session7.thuc_hanh;
+package session7.thuc_hanh.AnimalAndInterfaceIncredible;
 
 public class Main {
     public static void main(String[] args) {

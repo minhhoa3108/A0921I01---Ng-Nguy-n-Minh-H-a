@@ -1,6 +1,6 @@
-package session7.thuc_hanh;
+package session7.thuc_hanh.AnimalAndInterfaceIncredible;
 
-public class Chicken extends Animal implements Edible{
+public class Chicken extends Animal implements Edible {
 
     @Override
     public String makeSound() {
