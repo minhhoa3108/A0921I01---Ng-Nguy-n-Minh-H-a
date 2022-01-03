@@ -5,4 +5,5 @@ public abstract class Facility {
     private Double  useArea;
     private int rentalCost;
     private int quantityPeople;
+    private  String rentType; //kiểu thuê
 }
