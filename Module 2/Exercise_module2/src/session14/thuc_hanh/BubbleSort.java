@@ -1,4 +1,4 @@
-package session14.thuc_hanh.SettingBubbleSort;
+package session14.thuc_hanh;
 
 public class BubbleSort {
     static int[] list = {1, 4, 2, 56, 43, 54, 0, 7};
