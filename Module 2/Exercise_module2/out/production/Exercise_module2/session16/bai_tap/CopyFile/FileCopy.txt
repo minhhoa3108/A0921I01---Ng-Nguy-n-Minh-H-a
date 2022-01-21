@@ -1,0 +1,2 @@
+Dữ liệu được copy là: 
+[Minh Hoa, A0921I1]Số ký tự có trong tệp là: 2
