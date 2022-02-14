@@ -18,4 +18,9 @@ public class CustomerServiceImpl extends Customer implements CustomerService{
     public void edit(String maID) {
 
     }
+
+    @Override
+    public void delete() {
+
+    }
 }

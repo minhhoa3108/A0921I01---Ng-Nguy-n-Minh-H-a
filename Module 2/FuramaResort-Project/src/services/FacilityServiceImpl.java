@@ -1,6 +1,7 @@
 package services;
 
 public class FacilityServiceImpl implements FacilityService{
+
     @Override
     public void addVilla() {
 
@@ -28,6 +29,11 @@ public class FacilityServiceImpl implements FacilityService{
 
     @Override
     public void edit(String maID) {
+
+    }
+
+    @Override
+    public void delete() {
 
     }
 }

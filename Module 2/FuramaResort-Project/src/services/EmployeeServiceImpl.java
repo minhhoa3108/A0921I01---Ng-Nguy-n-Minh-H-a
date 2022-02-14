@@ -1,59 +1,66 @@
 package services;
 
 import models.Employee;
+import utils.ReadAndWriteToCSV;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService{
-    private static List<Employee> employeeList;
-
-    static {
-        employeeList = new ArrayList<>();
-        employeeList.add(new Employee(001, "Nguyễn Văn A", "01/01/2001", "Nam", "214028647", "091425367", "a@gmail.com",
-                            "Đại học", "Lễ Tân", 500));
-        employeeList.add(new Employee(002, "Nguyễn Văn B", "02/02/2002", "Nam", "214024547", "091411367", "b@gmail.com",
-                "Đại học", "Quản Lý", 1000));
-        employeeList.add(new Employee(003, "Nguyễn Thị C", "03/03/1999", "Nữ", "214024897", "095511367", "c@gmail.com",
-                "Đại học", "Trưởng Phòng", 1500));
-    }
-
+    private static final String EMPLOYEE_PATH_FILE = "src\\data\\Employee.csv";
     Scanner sc = new Scanner(System.in);
+
     @Override
     public void display() {
-        for(Employee employee : employeeList){
-            System.out.println(employee);
+        List<Employee> employeeList = ReadAndWriteToCSV.readEmployeeListFormCSV(EMPLOYEE_PATH_FILE);
+        for (int i = 0; i < employeeList.size(); i++){
+            System.out.println((i+1)+", " + employeeList.get(i));
         }
     }
 
     @Override
     public void add() {
-        Employee employee = new Employee();
         System.out.println("Nhập ID:");
-        employee.setMaId(sc.nextInt());
+        int id = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập họ và tên:");
-        employee.setHoVaTen(sc.nextLine());
+        String hoVaTen = sc.nextLine();
         System.out.println("Nhập ngày sinh:");
-        employee.setNgaySinh(sc.nextLine());
+        String ngaySinh = sc.nextLine();
         System.out.println("Nhập giới tính:");
-        employee.setGioiTinh(sc.nextLine());
+        String gioiTinh = sc.nextLine();
         System.out.println("Nhập số CMND (có 9 chữ số):");
-        employee.setCMND(sc.nextLine());
+        String CMND = sc.nextLine();
         System.out.println("Nhập sđt:");
-        employee.setSoDienThoai(sc.nextLine());
+        String sdt = sc.nextLine();
         System.out.println("Nhập email:");
-        employee.setEmail(sc.nextLine());
-        employee.setTrinhDo(trinhDo());// chọn trình độ
+        String email = sc.nextLine();
+        String trinhDo = trinhDo();// chọn trình độ
         System.out.println("Chọn vị trí làm việc:");
-        employee.setViTri(viTri());//chọn vị trí làm việc
+        String viTri = viTri();//chọn vị trí làm việc
         System.out.println("Nhập Lương:");
-        employee.setLuong(sc.nextInt());
+        String luong = sc.nextLine();
+        Employee employee = new Employee(id, hoVaTen, ngaySinh, gioiTinh, CMND, sdt, email, trinhDo, viTri, luong);
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(employee);
+
+        ReadAndWriteToCSV.writeEmployeeListToCSV1(EMPLOYEE_PATH_FILE, employeeList, true);
     }
 
     @Override
     public void edit(String maID) {
 
+    }
+
+    @Override
+    public void delete() {
+        List<Employee> employeeList = ReadAndWriteToCSV.readEmployeeListFormCSV(EMPLOYEE_PATH_FILE);
+        display();
+
+        System.out.println("Chọn Nhân Viên bạn muốn xóa:");
+        int choiceDelete = Integer.parseInt(sc.nextLine());
+        employeeList.remove(choiceDelete-1);
+        ReadAndWriteToCSV.writeEmployeeListToCSV1(EMPLOYEE_PATH_FILE, employeeList, false);
     }
 
     public String trinhDo(){
