@@ -74,4 +74,23 @@ select * from Subject where credit < 10;
 select Student.StudentId, Student.StudentName, Class.ClassName from 
 Student inner join Class on Student.ClassId = Class.ClassID where Class.ClassName = 'A1';
 
+/*Truy vấn CSDL*/ 
+/*1*/
+select * from Student S where S.StudentName LIKE "h%";
 
+/*2*/
+select * from Class where Class.StartDate LIKE "%12%";
+
+/*3*/
+select * from Subject where Subject.credit > 3 and Subject.credit < 5;
+
+/*4*/
+update Student
+SET Student.ClassId = '2'
+where Student.StudentName = 'Hung';
+
+/*5*/
+Select Stu.StudentName, Sub.SubName, Mark.SubId, 
+Mark.StudentId, Mark.Mark, Mark.ExamTimes from 
+((Mark Mark inner join Student Stu  on Mark.StudentId = Stu.StudentId) 
+inner join Subject Sub on Mark.SubId = Sub.SubId);
