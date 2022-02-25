@@ -96,3 +96,13 @@ Mark.StudentId, Mark.Mark, Mark.ExamTimes from
 inner join Subject Sub on Mark.SubId = Sub.SubId);
 
 /*------ Thực hành Session 4*/
+-- Sử dụng hàm count để hiển thị số lượng sinh viên ở từng nơi
+select Stu.Address, count(Stu.StudentID) from Student Stu group by Stu.Address;
+-- Bước 3: Tính điểm trung bình các môn học của mỗi học viên bằng cách sử dụng hàm AVG
+select Stu.StudentId, Stu.StudentName, avg(Mark) from
+Student Stu join Mark on Stu.StudentId = Mark.StudentId
+group by Stu.StudentId, Stu.StudentName;
+--  Bước 4: Hiển thị những bạn học viên co điểm trung bình các môn học lớn hơn 15
+select Stu.StudentId, Stu.StudentName, avg(Mark) from
+Student Stu join Mark on Stu.StudentId = Mark.StudentId
+group by Stu.StudentId, Stu.StudentName having avg(Mark) > 15;
