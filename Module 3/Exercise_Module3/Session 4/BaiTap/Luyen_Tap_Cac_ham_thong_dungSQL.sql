@@ -118,3 +118,7 @@ where mark >= all(select mark from Mark);
 
 -- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, 
 -- xếp hạng theo thứ tự điểm giảm dần
+select Stu.StudentId, Stu.StudentName, avg(Mark.Mark) from
+Student Stu inner join Mark on Stu.StudentId = Mark.StudentId
+group by Mark.StudentId
+order by Mark.Mark DESC;
