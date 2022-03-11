@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Layout với RWD</title>
+    <style>
+        .row{
+            /*float: left;*/
+            display: flex; /* cho các phần tử con nổi lên*/
+            flex-wrap: wrap; /* không đủ chỗ thì xuống hàng*/
+        }
+        .col-m-1 {width: 8.33333%;}
+        .col-m-2 {width: 16.66667%;}
+        .col-m-3 {width: 25%;}
+        .col-m-4 {width: 33.33333%;}
+        .col-m-5 {width: 41.66667%;}
+        .col-m-6 {width: 50%;}
+        .col-m-7 {width: 58.33333%;}
+        .col-m-8 {width: 66.66667%;}
+        .col-m-9 {width: 75%;}
+        .col-m-10 {width: 83.33333%;}
+        .col-m-11 {width: 91.66667%;}
+        .col-m-12 {width: 100%;}
+
+        header{
+            height: 50px;
+            background-color: black;
+        }
+        header ul, header li{
+            padding: 0;
+            margin: 0;
+        }
+        header li{
+            float: left;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        header li a{
+            width: 100px;
+            height: 50px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            line-height: 50px;
+            font-size: 20px;
+        }
+        header li a:hover{
+            background-color: white;
+            color: black;
+        }
+        #login{
+            position: relative;
+            float: right;
+        }
+        #login li{
+            margin: 0;
+            padding: 0;
+        }
+        #login li a{
+            width: 100px;
+            height: 50px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            line-height: 50px;
+            font-size: 20px;
+        }
+        #login li a:hover{
+            background-color: black;
+            color: white;
+            text-decoration: underline;
+        }
+
+        .left_bar{
+            text-align: center;
+            background-color: #d8d8ff;
+            color: blue;
+        }
+
+
+        footer{
+            background-color: rgba(0,0,0,0.69);
+            height: 50px;
+            color: white;
+            text-align: center;
+        }
+        footer p{
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#">LOGO</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <ul id="login">
+            <li><a href="#">LOGIN</a></li>
+        </ul>
+    </header>
+
+    <div class="row" style="height: 500px">
+        <div class="col-m-3 left_bar">
+            <p>Link</p>
+            <p>Link</p>
+            <p>Link</p>
+        </div>
+
+        <div class="col-m-6 center_bar">
+            <h2 style="padding: 0 10px">Welcome</h2>
+            <p style="padding: 0 10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet nibh vel purus egestas malesuada.
+                Aliquam ac purus ultricies, volutpat elit ut, pharetra eros. In sed augue vel justo porttitor bibendum non in eros. Aenean condimentum,
+                lorem sed rutrum egestas, nunc erat sodales nibh, id hendrerit sapien purus vel turpis. Aliquam erat volutpat.
+                Ut lectus nibh, eleifend in vulputate et, gravida ac purus. Mauris non felis venenatis justo maximus malesuada sit amet nec eros.
+                Sed nunc sem, sodales vitae lorem at, euismod consectetur tortor. Nullam id mauris nisi. Mauris lobortis metus risus, sed pulvinar orci facilisis a.
+                Mauris in imperdiet velit. Integer vitae tortor placerat, interdum lorem sit amet, dignissim justo.
+            </p>
+            <br><br>
+            <h2 style="padding: 0 10px">Test</h2>
+            <p style="padding: 0 10px">Lorem ipsum dolor sit amet,</p>
+        </div>
+
+        <div class="col-m-3 left_bar">
+            <p>Link</p>
+            <p>Link</p>
+            <p>Link</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Footer Text</p>
+    </footer>
+</body>
+</html>
