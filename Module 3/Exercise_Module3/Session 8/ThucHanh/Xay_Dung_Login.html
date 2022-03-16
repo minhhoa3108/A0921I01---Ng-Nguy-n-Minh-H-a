@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Login Bằng Bootstrap </title>
+
+    <script src="../../CDN-Bootstrap/bootstrap-4.6.1-dist/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="../../CDN-Bootstrap/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <script src="../../CDN-Bootstrap/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            background-color: lightgray;
+            display: -ms-flexbox;
+            align-items: center;
+            justify-content: center;
+            padding-top: 140px;
+            padding-bottom: 40px;
+        }
+
+        .text-center{
+            width: 100%;
+            max-width: 340px;
+            padding: 15px;
+            margin: 0 auto;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <div class="text-center">
+        <div class="form-group">
+            <img src="bootstrap.jpg" height="163" width="310"/></div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</body>
+</html>

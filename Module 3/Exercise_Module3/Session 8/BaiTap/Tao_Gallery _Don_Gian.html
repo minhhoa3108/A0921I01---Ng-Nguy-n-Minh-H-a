@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo gallery đơn giản sử dụng Bootstrap</title>
+
+    <script src="../../CDN-Bootstrap/bootstrap-4.6.1-dist/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="../../CDN-Bootstrap/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <script src="../../CDN-Bootstrap/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+
+    <style>
+        .card:hover{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h2>Responsive Image Gallery</h2>
+        <h5>Responsive Image Gallery</h5>
+        <div class="card-group row">
+            <div class="card col-md-3 col-sm-6 col-12">
+                <img src="img1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Add a description of the image here</p>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6 col-12">
+                <img src="img2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Add a description of the image here</p>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6 col-12">
+                <img src="img3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Add a description of the image here</p>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6 col-12">
+                <img src="img4.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Add a description of the image here</p>
+                </div>
+            </div>
+        </div>
+        <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px wide,
+            it will show four images side by side, for screens smaller than 700px, it will show two images side by side. For screens smaller than 500px,
+            the images will stack vertically (100%).</p>
+    </div>
+</body>
+</html>

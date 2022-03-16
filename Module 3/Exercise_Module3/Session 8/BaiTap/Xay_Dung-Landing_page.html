@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Landing Page</title>
+
+    <script src="../../CDN-Bootstrap/bootstrap-4.6.1-dist/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="../../CDN-Bootstrap/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <script src="../../CDN-Bootstrap/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .nav-item a:hover{
+            text-decoration: underline;
+        }
+        .nav-item a{
+            font-size: 14px;
+        }
+        .card{
+            padding: 0 8px;
+            border: none;
+        }
+        .card-body{
+            background-color: #f3f3f3;
+        }
+
+
+        #myBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: lightgray; /* Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+        }
+
+        #myBtn:hover {
+            background-color: #555; /* Add a dark-grey background on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="microsoft.png" width="140" height="85" class="d-inline-block align-top" alt="">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" style="font-weight: bold; font-size: 18px">Surfaces <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                Computers
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false">
+                                Computers for Business
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
+                                Accessories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="false">
+                                Shop now
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu4" data-toggle="dropdown" aria-expanded="false">
+                                Support
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNavRight">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuAll_Micro" data-toggle="dropdown" aria-expanded="false">
+                                All Microsoft
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuAll_Micro">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >Search <i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >Cart <i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >User <i class="fa-solid fa-user"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="row" style="background-color: #007bff; text-align: center">
+        <div class="col-md-12 col-12">
+            <a href="#" style="color: white">Save big on Surface devices. Shop Deals ></a>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12" style="text-align: center">
+                <p style="font-size: 40px; font-family: 'Segoe UI'">Microsoft Surface laptops and 2-in-1s</p>
+                <p style="font-size: 18px; font-family: 'Segoe UI'">You can take originality to a new level this Women’s History Month, with a <br>little inspiration and the right Surface device.</p>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-2 col-md-2">
+                        <a href="#">Celebrate Women’s History <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                    <div class="col-12 col-sm-2 col-md-2">
+                        <a href="#">Celebrate Women’s History <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--     Video   -->
+        <div class="row" style="justify-content: center; margin-top: 20px">
+            <iframe width="100%" height="730" src="https://www.youtube.com/embed/BkhaV46HM2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!--     end Video   -->
+        <div class="row mt-5">
+            <div class="col-12 col-sm-4 col-md-4">
+                <p style="font-family: Arial; font-size: 30px">More choices than ever</p>
+                <p>Check out the most diverse selection of Surface devices yet, built for all the ways you create, work, play, and connect.</p>
+            </div>
+            <div class="col-12 col-sm-8 col-md-8" style="color: #007bff; font-size: 18px; text-align: center">
+                <div class="row" style="margin: 20px 0px">
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <i class="fa-solid fa-display"></i>
+                        <a href="#">Compare devices <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <a href="#">Help me choose <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                        <a href="#">Deals <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="row" style="margin: 40px 0px">
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <i class="fa-solid fa-house-user"></i>
+                        <a href="#">Surface at home <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <a href="#">For Education <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <i class="fa-solid fa-building"></i>
+                        <a href="#">For Business <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--    Product row 1    -->
+        <p style="margin-top: 20px; font-size: 18px">2-in-1 PCs</p>
+        <div class="card-group">
+            <div class="card">
+                <img class="card-img-top" src="microsoft_product.png" alt="Card image cap">
+                <div class="card-body">
+                    <span style="background-color: yellow"><strong style="padding: 0 5px">NEW</strong></span><br>
+                    <p style="padding-top: 30px; font-size: 16px"><a href="#">Surface Pro 8 <i class="fa-solid fa-angle-right"></i></a></p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="microsoft_product.png" alt="Card image cap">
+                <div class="card-body">
+                    <span style="background-color: yellow"><strong style="padding: 0 5px">NEW</strong></span><br>
+                    <p style="padding-top: 30px; font-size: 16px"><a href="#">Surface Pro 8 <i class="fa-solid fa-angle-right"></i></a></p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="microsoft_product.png" alt="Card image cap">
+                <div class="card-body">
+                    <span style="background-color: yellow"><strong style="padding: 0 5px">NEW</strong></span><br>
+                    <p style="padding-top: 30px; font-size: 16px"><a href="#">Surface Pro 8 <i class="fa-solid fa-angle-right"></i></a></p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="microsoft_product.png" alt="Card image cap">
+                <div class="card-body">
+                    <span style="background-color: yellow"><strong style="padding: 0 5px">NEW</strong></span><br>
+                    <p style="padding-top: 30px; font-size: 16px"><a href="#">Surface Pro 8 <i class="fa-solid fa-angle-right"></i></a></p>
+                </div>
+            </div>
+        </div>
+        <!--    End Product row 1    -->
+    </div>
+
+
+<!--    Button Back to Top-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+    <!--Button Back to top-->
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            // document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+</body>
+</html>
