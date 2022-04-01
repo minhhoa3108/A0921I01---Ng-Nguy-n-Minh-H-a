@@ -108,7 +108,20 @@ create table hop_dong_chi_tiet(
     foreign key (ma_dich_vu_di_kem) references dich_vu_di_kem(ma_dich_vu_di_kem)
 );
 
-/*2.	Hiển thị thông tin của tất cả nhân viên có 
+/*2.Hiển thị thông tin của tất cả nhân viên có 
 trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” 
 hoặc “K” và có tối đa 15 kí tự.*/
-select * from nhan_vien;
+SELECT *
+FROM nhan_vien 
+WHERE ho_ten LIKE '[HTK]%' and LEN(ho_ten) <= 20;
+
+/*3.Hiển thị thông tin của tất cả khách hàng 
+có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.*/
+-- hàm tính tuổi
+delimiter $$
+create function get_age(age)
+returns int
+deterministic
+begin
+
+select * from khach_hang;
