@@ -22,6 +22,9 @@ public class UserDaoImpl implements IUserDao {//Connect DB
     private static final String SEARCH_BY_COUNTRY = "select id, name, email, country from users where country=?";
     private static final String SEARCH_USER_BY_ID_STORE = "CALL get_user_by_id(?);";
     private static final String INSERT_USER_STORE = "CALL insert_user(?, ?, ?);";
+    private static final String SORT_USERS_BY_NAME = "CALL sortName()";
+    private static final String DISPLAY_USER_STORE_PROCEDURE = "CALL displayAllUser();";
+    private static final String DELETE_USER_STORE_PROCEDURE = "CALL deleteUserStore(?)";
 
     public UserDaoImpl() {
     }
@@ -98,6 +101,50 @@ public class UserDaoImpl implements IUserDao {//Connect DB
         return user;
     }
 
+    @Override
+    public List<User> sortUsersByName() {
+        List<User> users = new ArrayList<>();
+        try(Connection connection = getConnection();
+            CallableStatement callableStatement = connection.prepareCall(SORT_USERS_BY_NAME)) {
+
+            ResultSet resultSet = callableStatement.executeQuery();
+
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                users.add(new User(id, name, email, country));
+            }
+        }catch (SQLException e) {
+            printSQLException(e);
+        }
+        return users;
+    }
+
+    @Override
+    public List<User> displayUserStoreProcedure() {
+        List<User> users = new ArrayList<>();
+
+        try(Connection connection = getConnection();
+            CallableStatement callableStatement = connection.prepareCall(DISPLAY_USER_STORE_PROCEDURE)) {
+
+            ResultSet resultSet = callableStatement.executeQuery();
+
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                users.add(new User(id, name, email, country));
+            }
+        }catch (SQLException e) {
+            printSQLException(e);
+        }
+
+        return users;
+    }
+
 
     public List<User> selectAllUsers() {
 
@@ -135,6 +182,19 @@ public class UserDaoImpl implements IUserDao {//Connect DB
         return rowDeleted;
     }
 
+    @Override
+    public boolean deleteUserStore(int id) throws SQLException {
+        boolean rowDeleted;
+
+        try(Connection connection = getConnection();
+            CallableStatement callableStatement = connection.prepareCall(DELETE_USER_STORE_PROCEDURE)) {
+            callableStatement.setInt(1, id);
+            rowDeleted = callableStatement.executeUpdate() > 0;
+        }
+        return rowDeleted;
+    }
+
+
     public boolean updateUser(User user) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
@@ -168,6 +228,7 @@ public class UserDaoImpl implements IUserDao {//Connect DB
         }
         return user;
     }
+
 
     @Override
     public void inserUserStore(User user) throws SQLException {

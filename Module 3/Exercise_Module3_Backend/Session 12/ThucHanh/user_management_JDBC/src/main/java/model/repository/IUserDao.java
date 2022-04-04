@@ -20,8 +20,15 @@ public interface IUserDao {
 
     User getUserById(int id);
 
+    public List<User> sortUsersByName();
+
     void inserUserStore(User user) throws  SQLException;
 
     void addUserTransaction(User user, int[] permisions);
+
+    public List<User> displayUserStoreProcedure();
+
+    public boolean deleteUserStore(int id) throws SQLException;
+
 }
 
