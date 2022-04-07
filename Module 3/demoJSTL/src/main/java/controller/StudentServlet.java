@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "controller.StudentServlet", urlPatterns = {"/student"})
 public class StudentServlet extends HttpServlet {
@@ -36,12 +37,29 @@ public class StudentServlet extends HttpServlet {
                 delete(request, response);
                 break;
             case "search":
+                search(request, response);
                 break;
             default:
                 // hien thi danh sách
         }
 
 
+    }
+
+    private void search(HttpServletRequest request, HttpServletResponse response) {
+        String searchName = request.getParameter("searchName");
+        String searchEmail= request.getParameter("searchEmail");
+        String searchClassId = request.getParameter("searchClassId");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/student/list.jsp");
+        request.setAttribute("studentList", studentService.search(searchName,searchEmail,searchClassId));
+        request.setAttribute("classList", classService.findAll());
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void save(HttpServletRequest request, HttpServletResponse response) {
@@ -54,12 +72,20 @@ public class StudentServlet extends HttpServlet {
         int classId = Integer.parseInt(request.getParameter("classId"));
         String email = request.getParameter("email");
         Student student = new Student(name, gender, birthday, point, classId, email);
-        boolean check = studentService.add(student);
+        List<String> messList = studentService.add(student);
+
+        boolean check =true;
+        for (String mess: messList) {
+            if (!mess.equals("")){
+                check =false;
+            }
+        }
         String mess = "Them moi thanh cong";
         if (!check) {
             mess = "them moi khong thanh cong";
         }
         request.setAttribute("mess", mess);
+        request.setAttribute("messList", messList);
         request.setAttribute("classList", classService.findAll());
         try {
             request.getRequestDispatcher("/view/student/create.jsp").forward(request, response);
@@ -122,7 +148,6 @@ public class StudentServlet extends HttpServlet {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/student/list.jsp");
         request.setAttribute("studentList", studentService.findAll());
         request.setAttribute("classList", classService.findAll());
-
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {

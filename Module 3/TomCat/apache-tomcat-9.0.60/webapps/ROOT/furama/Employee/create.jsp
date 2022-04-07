@@ -17,33 +17,45 @@
 </head>
 <body>
     <h2>Create new Employee</h2>
-    <a href="list.jsp">Back to List Employee</a>
+    <a href="/employee?action=''">Back to List Employee</a>
 
-    <form action="/employee?action=add" method="post">
+    <form action="/employee?action=create" method="post">
         <table>
             <tr>
-                <td>ID:</td>
-                <td><input type="text" name="id"></td>
+                <td>Mã Nhân Viên:</td>
+                <td><input type="text" name="ma_nhan_vien"></td>
             </tr>
             <tr>
-                <td>Name:</td>
-                <td><input type="text" name="name"></td>
+                <td>Họ và Tên:</td>
+                <td><input type="text" name="ho_ten"></td>
             </tr>
             <tr>
-                <td>Birthday:</td>
-                <td><input type="date" name="birthday"></td>
+                <td>Ngày Sinh:</td>
+                <td><input type="date" name="ngay_sinh"></td>
             </tr>
             <tr>
-                <td>Salary:</td>
-                <td><input type="text" name="salary"></td>
+                <td>Số CMND:</td>
+                <td><input type="text" name="so_cmnd"></td>
             </tr>
             <tr>
-                <td>Phone:</td>
-                <td><input type="text" name="phone"></td>
+                <td>Lương:</td>
+                <td><input type="text" name="luong"></td>
+            </tr>
+            <tr>
+                <td>SĐT:</td>
+                <td><input type="text" name="so_dien_thoai"></td>
             </tr>
             <tr>
                 <td>Email:</td>
                 <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>Địa chỉ:</td>
+                <td><input type="text" name="dia_chi"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit"></td>
             </tr>
         </table>
     </form>

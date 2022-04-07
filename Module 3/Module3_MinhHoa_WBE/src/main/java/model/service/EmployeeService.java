@@ -7,9 +7,13 @@ import java.util.List;
 public interface EmployeeService {
     public List<Employee> listEmployee();
 
-    void createEmployee();
+    boolean createEmployee(Employee employee);
 
-    public boolean deleteEmployee(int id);
+    public boolean deleteEmployee(int ma_nhan_vien);
 
     public boolean editEmployee(Employee employee);
+
+    Employee getEmployeeById(int ma_nhan_vien);
+
+    List<Employee> search(String ho_ten, String email);
 }

@@ -17,17 +17,27 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void createEmployee() {
-
+    public boolean createEmployee(Employee employee) {
+        return employeeRepository.createEmployee(employee);
     }
 
     @Override
-    public boolean deleteEmployee(int id) {
-        return false;
+    public boolean deleteEmployee(int ma_nhan_vien) {
+        return employeeRepository.deleteEmployee(ma_nhan_vien);
     }
 
     @Override
     public boolean editEmployee(Employee employee) {
-        return false;
+        return employeeRepository.editEmployee(employee);
+    }
+
+    @Override
+    public Employee getEmployeeById(int ma_nhan_vien) {
+        return employeeRepository.getEmployeeById(ma_nhan_vien);
+    }
+
+    @Override
+    public List<Employee> search(String ho_ten, String email) {
+        return employeeRepository.search(ho_ten, email);
     }
 }

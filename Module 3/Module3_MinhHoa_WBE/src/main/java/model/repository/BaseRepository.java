@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-    private static final String jdbcURL = "jdbc:mysql://localhost:3306/furama_resort?useSSL=false";
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/furama_resort_case?useSSL=false";
     private static final String jdbcUsername = "root";
     private static final String jdbcPassword = "nnmhoa448@";
 

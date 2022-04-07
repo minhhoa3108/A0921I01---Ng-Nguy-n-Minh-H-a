@@ -20,7 +20,10 @@ dependencies {
     // driver Mysql
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.27'
-
-
+              // fix looix font tieng viet ở html
+    compileJava.options.encoding = 'UTF-8'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
 
 }

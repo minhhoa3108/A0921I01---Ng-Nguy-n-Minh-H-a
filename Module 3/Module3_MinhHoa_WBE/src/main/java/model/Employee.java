@@ -3,62 +3,74 @@ package model;
 import java.util.Date;
 
 public class Employee {
-    private int id;
-    private String name;
-    private Date birthday;
-    private double salary;
-    private String phone;
+    private int ma_nhan_vien;
+    private String ho_ten;
+    private String ngay_sinh;
+    private String so_cmnd;
+    private double luong;
+    private String so_dien_thoai;
     private String email;
+    private String dia_chi;
 
     public Employee() {}
 
-    public Employee(int id, String name, Date birthday, double salary, String phone, String email) {
-        this.id = id;
-        this.name = name;
-        this.birthday = birthday;
-        this.salary = salary;
-        this.phone = phone;
+    public Employee(int ma_nhan_vien, String ho_ten, String ngay_sinh, String so_cmnd, double luong, String so_dien_thoai, String email, String dia_chi) {
+        this.ma_nhan_vien = ma_nhan_vien;
+        this.ho_ten = ho_ten;
+        this.ngay_sinh = ngay_sinh;
+        this.so_cmnd = so_cmnd;
+        this.luong = luong;
+        this.so_dien_thoai = so_dien_thoai;
         this.email = email;
+        this.dia_chi = dia_chi;
     }
 
-    public int getId() {
-        return id;
+    public int getMa_nhan_vien() {
+        return ma_nhan_vien;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMa_nhan_vien(int ma_nhan_vien) {
+        this.ma_nhan_vien = ma_nhan_vien;
     }
 
-    public String getName() {
-        return name;
+    public String getHo_ten() {
+        return ho_ten;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHo_ten(String ho_ten) {
+        this.ho_ten = ho_ten;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public String getNgay_sinh() {
+        return ngay_sinh;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setNgay_sinh(String ngay_sinh) {
+        this.ngay_sinh = ngay_sinh;
     }
 
-    public double getSalary() {
-        return salary;
+    public String getSo_cmnd() {
+        return so_cmnd;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setSo_cmnd(String so_cmnd) {
+        this.so_cmnd = so_cmnd;
     }
 
-    public String getPhone() {
-        return phone;
+    public double getLuong() {
+        return luong;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setLuong(double luong) {
+        this.luong = luong;
+    }
+
+    public String getSo_dien_thoai() {
+        return so_dien_thoai;
+    }
+
+    public void setSo_dien_thoai(String so_dien_thoai) {
+        this.so_dien_thoai = so_dien_thoai;
     }
 
     public String getEmail() {
@@ -67,5 +79,13 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDia_chi() {
+        return dia_chi;
+    }
+
+    public void setDia_chi(String dia_chi) {
+        this.dia_chi = dia_chi;
     }
 }

@@ -16,6 +16,17 @@
 </head>
 <body>
 <h1>Trang danh sách sinh viên</h1>
+<form action="/student?action=search" method="post">
+    <input name="searchName">
+    <input name="searchEmail">
+    <select name="searchClassId">
+        <option value="" >Chọn lớp</option>
+        <c:forEach items="${classList}" var="c1">
+            <option value="${c1.id}">${c1.className}</option>
+        </c:forEach>
+    </select>
+    <button> Search</button>
+</form>
 <a href="/student?action=add">Them moi</a>
 <table class="table table-striped" border="1" style="border-collapse:  collapse">
     <tr>

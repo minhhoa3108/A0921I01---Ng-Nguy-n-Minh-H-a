@@ -1,5 +1,7 @@
 select * from users;
 
+
+
 -- Ham tim kiem user theo id
 DELIMITER $$
 CREATE PROCEDURE get_user_by_id(IN user_id INT)

@@ -12,6 +12,7 @@ import java.util.List;
 public class StudentRepositoryImpl implements StudentRepository {
     private static final String FIND_BY_ALL ="select * from student;";
     private static final String DELETE_BY_ID ="call delete_student_by_id(?);";
+    private static final String SEARCH ="SELECT * FROM student where name like ? and email like ? and class_id like ?;";
     private static final String ADD_NEW=" insert into student(`name`,birthday, gender,`point`, class_id,`account`,email) \n" +
             " values (?,?,?,?,?,?,?);";
     @Override
@@ -75,5 +76,33 @@ public class StudentRepositoryImpl implements StudentRepository {
             throwables.printStackTrace();
         }
         return check;
+    }
+
+    @Override
+    public List<Student> search(String searchName, String searchEmail, String searchClassId) {
+        List<Student> studentList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnect();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH);
+            preparedStatement.setString(1,"%"+searchName+"%");
+            preparedStatement.setString(2,"%"+searchEmail+"%");
+            preparedStatement.setString(3,"%"+searchClassId+"%");
+            ResultSet resultSet =preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("id"); // colummLable : tên  thuocj tính của bảng
+                String name  = resultSet.getString("name");
+                Boolean gender = resultSet.getBoolean("gender");
+                String birthday = resultSet.getString("birthday");
+                int point = resultSet.getInt("point");
+                String account = resultSet.getString("account");
+                int classId = resultSet.getInt("class_id");
+                String email = resultSet.getString("email");
+                Student student = new Student(id,name,gender,birthday,point,account,classId,email);
+                studentList.add(student);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return studentList;
     }
 }

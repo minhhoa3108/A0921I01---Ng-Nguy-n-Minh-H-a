@@ -19,13 +19,16 @@
 
 <form action="/student?action=add" method="post">
     <table>
-<%--        <tr>--%>
-<%--            <td>ID</td>--%>
-<%--            <td><input type="text" name="id" placeholder="nhâp id"></td>--%>
-<%--        </tr>--%>
+        <%--        <tr>--%>
+        <%--            <td>ID</td>--%>
+        <%--            <td><input type="text" name="id" placeholder="nhâp id"></td>--%>
+        <%--        </tr>--%>
         <tr>
             <td>Tên</td>
-            <td><input type="text" name="name" placeholder="nhâp tên"></td>
+            <td>
+                <input type="text" name="name" placeholder="nhâp tên">
+                <span>${messList[0]}</span>
+            </td>
         </tr>
         <tr>
             <td>Giới tính</td>
@@ -40,25 +43,31 @@
         </tr>
         <tr>
             <td>Điểm</td>
-            <td><input type="text" name="point" placeholder="nhập điểm"></td>
+            <td>
+                <input type="text" name="point" placeholder="nhập điểm">
+                <span>${messList[1]}</span>
+            </td>
         </tr>
-<%--        <tr>--%>
-<%--            <td>Account</td>--%>
-<%--            <td><input type="text" name="account" placeholder="nhập account"></td>--%>
-<%--        </tr>--%>
+        <%--        <tr>--%>
+        <%--            <td>Account</td>--%>
+        <%--            <td><input type="text" name="account" placeholder="nhập account"></td>--%>
+        <%--        </tr>--%>
         <tr>
             <td>Class id</td>
             <td>
                 <select name="classId">
-                   <c:forEach items="${classList}" var="class1">
-                       <option value="${class1.id}">${class1.className}</option>
-                   </c:forEach>
+                    <c:forEach items="${classList}" var="class1">
+                        <option value="${class1.id}">${class1.className}</option>
+                    </c:forEach>
                 </select>
             </td>
         </tr>
         <tr>
             <td>Email</td>
-            <td><input type="text" name="email" placeholder="nhập email"></td>
+            <td>
+                <input type="text" name="email" placeholder="nhập email">
+                <span>${messList[2]}</span>
+            </td>
         </tr>
         <tr>
             <td></td>
