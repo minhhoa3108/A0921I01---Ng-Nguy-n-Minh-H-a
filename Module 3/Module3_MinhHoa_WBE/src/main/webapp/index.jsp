@@ -34,7 +34,7 @@
           <img src="img/logo.png" alt="" width="140" height="140">
         </div>
         <div class="col-12 col-sm-2">
-          One of two columns
+          USER
         </div>
       </div>
     </div>

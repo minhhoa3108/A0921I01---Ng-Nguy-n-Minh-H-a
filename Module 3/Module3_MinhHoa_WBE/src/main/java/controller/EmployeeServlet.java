@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @WebServlet(name = "EmployeeServlet", urlPatterns = "/employee")
 public class EmployeeServlet extends HttpServlet {
@@ -38,6 +39,7 @@ public class EmployeeServlet extends HttpServlet {
                     break;
                 case "delete":
                     deleteEmployee(request, response);
+                    break;
                 case "search":
                     search(request, response);
                     break;
@@ -99,20 +101,30 @@ public class EmployeeServlet extends HttpServlet {
             throws SQLException, IOException, ServletException, ParseException {
         int ma_nhan_vien = Integer.parseInt(request.getParameter("ma_nhan_vien"));
         String ho_ten = request.getParameter("ho_ten");
-
         String ngay_sinh = request.getParameter("ngay_sinh");
-
         String so_cmnd = request.getParameter("so_cmnd");
         double luong = Double.parseDouble(request.getParameter("luong"));
         String so_dien_thoai = request.getParameter("so_dien_thoai");
         String email = request.getParameter("email");
         String dia_chi = request.getParameter("dia_chi");
         Employee newEmployee = new Employee(ma_nhan_vien, ho_ten, ngay_sinh, so_cmnd, luong, so_dien_thoai, email, dia_chi);
-        employeeService.createEmployee(newEmployee);
+        List<String> messList =employeeService.createEmployee(newEmployee);
 
+        boolean check = true;
+        for (String mess: messList) {
+            if (!mess.equals("")){
+                check =false;
+            }
+        }
+        String mess = "Thêm mới thành công";
+        if (!check) {
+            mess = "Thêm mới KHÔNG thành công";
+        }
+        request.setAttribute("mess", mess);
+        request.setAttribute("messList", messList);
         request.setAttribute("employeeList", employeeService.listEmployee());
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("furama/Employee/list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("furama/Employee/create.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

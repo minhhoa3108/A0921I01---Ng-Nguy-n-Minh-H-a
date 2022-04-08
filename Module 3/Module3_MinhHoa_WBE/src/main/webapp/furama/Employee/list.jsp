@@ -24,11 +24,13 @@
 
         <a href="/employee?action=create" class="btn btn-success" role="button" style="margin: 10px 0">Create New Employee</a>
 
+        <%--    Tìm Kiếm    --%>
         <form action="/employee?action=search" method="post">
             <input name="search_ho_ten" placeholder="Search Theo Tên">
             <input name="search_email" placeholder="Search Theo Email">
             <button> Search</button>
         </form>
+        <%--    End Tìm Kiếm    --%>
 
         <table class="table table-striped" border="1" style="border-collapse: collapse">
             <tr>
@@ -56,12 +58,12 @@
                    <td>${employee.email}</td>
                    <td>${employee.dia_chi}</td>
                    <td>
-                       <button type="button" onclick="infoDelete('${employee.ma_nhan_vien}', '${employee.ho_ten}')" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                       <button type="button" onclick="infoDelete('${employee.ma_nhan_vien}', '${employee.ho_ten}')" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
                            Delete
                        </button>
                    </td>
                    <td>
-                       <a href="/employee?action=edit&ma_nhan_vien=${employee.ma_nhan_vien}" class="btn btn-success" role="button">Edit</a>
+                       <a href="/employee?action=edit&ma_nhan_vien=${employee.ma_nhan_vien}" class="btn btn-outline-primary" role="button">Edit</a>
                    </td>
                </tr>
            </c:forEach>
