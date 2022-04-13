@@ -69,7 +69,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit"></td>
+                <td><input type="submit" value="ADD"></td>
             </tr>
         </table>
     </form>

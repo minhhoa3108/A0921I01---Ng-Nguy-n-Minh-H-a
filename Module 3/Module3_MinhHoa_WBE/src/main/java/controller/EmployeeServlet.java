@@ -148,10 +148,6 @@ public class EmployeeServlet extends HttpServlet {
                 // chỉnh sửa
                 showEditForm(request, response);
                 break;
-            case "delete":
-                break;
-            case "search":
-                break;
             default:
                 showEmployee(request, response);
                 // hien thi danh sách

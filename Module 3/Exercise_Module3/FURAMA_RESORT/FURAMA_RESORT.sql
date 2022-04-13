@@ -107,3 +107,21 @@ create table hop_dong_chi_tiet(
     foreign key (ma_hop_dong) references hop_dong(ma_hop_dong),
     foreign key (ma_dich_vu_di_kem) references dich_vu_di_kem(ma_dich_vu_di_kem)
 );
+
+
+DELIMITER $$
+CREATE PROCEDURE editEmployee(
+	IN employee_id int,
+    IN employee_name varchar(50),
+    IN employee_birthday varchar(50),
+    IN employee_salary int,
+    IN employee_phone varchar(50),
+    IN employee_email varchar(50)
+)
+BEGIN
+	UPDATE employees 
+	SET employees.name = employee_name, employees.birthday = employee_birthday, employees.salary = employee_salary,
+	employees.phone = employee_phone, employees.email = employee_email
+	WHERE employees.id = employee_id;
+END $$
+DELIMITER ;

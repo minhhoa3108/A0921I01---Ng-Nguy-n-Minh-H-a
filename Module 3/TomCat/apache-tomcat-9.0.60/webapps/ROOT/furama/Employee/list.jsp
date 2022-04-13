@@ -13,9 +13,17 @@
 
     <script src="../../CDN-Bootstrap/bootstrap-4.6.1-dist/jquery-3.0.0.min.js"></script>
     <link rel="stylesheet" href="../../CDN-Bootstrap/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../datatables/css/dataTables.bootstrap4.min.css">
     <script src="../../CDN-Bootstrap/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
-    
-    
+    <script src="../../datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/js/dataTables.bootstrap4.min.js"></script>
+
+    <style>
+        .btn-danger:hover{
+            background-color: rgba(255,162,98,0.85);
+            border: 1px solid rgba(255,162,98,0.85);
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -32,41 +40,45 @@
         </form>
         <%--    End Tìm Kiếm    --%>
 
-        <table class="table table-striped" border="1" style="border-collapse: collapse">
-            <tr>
-                <th>STT</th>
-                <th>Ma Nhan Vien</th>
-                <th>Họ và Tên</th>
-                <th>Ngày Sinh</th>
-                <th>Số CMND</th>
-                <th>Lương</th>
-                <th>SĐT</th>
-                <th>Email</th>
-                <th>Địa Chỉ</th>
-                <th>Xóa</th>
-                <th>Sửa</th>
-            </tr>
-           <c:forEach items="${employeeList}" var="employee" varStatus="item">
-               <tr>
-                   <td>${item.count}</td>
-                   <td>${employee.ma_nhan_vien}</td>
-                   <td>${employee.ho_ten}</td>
-                   <td>${employee.ngay_sinh}</td>
-                   <td>${employee.so_cmnd}</td>
-                   <td>${employee.luong}</td>
-                   <td>${employee.so_dien_thoai}</td>
-                   <td>${employee.email}</td>
-                   <td>${employee.dia_chi}</td>
-                   <td>
-                       <button type="button" onclick="infoDelete('${employee.ma_nhan_vien}', '${employee.ho_ten}')" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
-                           Delete
-                       </button>
-                   </td>
-                   <td>
-                       <a href="/employee?action=edit&ma_nhan_vien=${employee.ma_nhan_vien}" class="btn btn-outline-primary" role="button">Edit</a>
-                   </td>
-               </tr>
-           </c:forEach>
+        <table id="tableEmployee" class="table table-striped table-bordered" style="border-collapse: collapse">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Ma Nhan Vien</th>
+                    <th>Họ và Tên</th>
+                    <th>Ngày Sinh</th>
+                    <th>Số CMND</th>
+                    <th>Lương</th>
+                    <th>SĐT</th>
+                    <th>Email</th>
+                    <th>Địa Chỉ</th>
+                    <th>Xóa</th>
+                    <th>Sửa</th>
+                </tr>
+            </thead>
+           <tbody>
+               <c:forEach items="${employeeList}" var="employee" varStatus="item">
+                   <tr>
+                       <td>${item.count}</td>
+                       <td>${employee.ma_nhan_vien}</td>
+                       <td>${employee.ho_ten}</td>
+                       <td>${employee.ngay_sinh}</td>
+                       <td>${employee.so_cmnd}</td>
+                       <td>${employee.luong}</td>
+                       <td>${employee.so_dien_thoai}</td>
+                       <td>${employee.email}</td>
+                       <td>${employee.dia_chi}</td>
+                       <td>
+                           <button type="button" onclick="infoDelete('${employee.ma_nhan_vien}', '${employee.ho_ten}')" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                               Delete
+                           </button>
+                       </td>
+                       <td>
+                           <a href="/employee?action=edit&ma_nhan_vien=${employee.ma_nhan_vien}" class="btn btn-outline-primary" role="button">Edit</a>
+                       </td>
+                   </tr>
+               </c:forEach>
+           </tbody>
         </table>
     </div>
 
@@ -103,6 +115,16 @@
             document.getElementById("employeeName").innerText=name;
             document.getElementById("employeeID").value=id;
         }
+
+
+        //Phân Trang
+        $(document).ready(function() {
+            $('#tableEmployee').dataTable( {
+                "dom": 'lrtip',
+                "lengthChange": false,
+                "pageLength": 5
+            } );
+        } );
     </script>
 </body>
 </html>

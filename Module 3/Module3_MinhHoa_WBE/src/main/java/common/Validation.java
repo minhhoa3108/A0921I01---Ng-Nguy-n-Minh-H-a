@@ -7,7 +7,7 @@ public class Validation {
     }
 
     public static boolean checkEmail(String email){
-        String regex = "^[a-zA-Z0-9]{4,}@gmail\\.com$";
+        String regex = "^[a-zA-Z0-9]{4,}@[a-z]{3,}\\.[a-z]{2,}$";
         return email.matches(regex);
     }
 
